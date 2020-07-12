@@ -2,11 +2,9 @@ import discord
 from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
-from discord import Activity, ActivityType
 import datetime
 import random
 import json
-#0x4c12f5
 Bot = commands.Bot(command_prefix="$")
 queue = []
 
@@ -104,4 +102,3 @@ async def give(ctx,member:discord.Member,arg:int):
         await ctx.send('У вас недостаточно денег')
     with open('economy.json','w') as f:
         json.dump(money,f)
-Bot.run('NjcwNjI1MjU0MzIxODE1NTkz.Xwcelw.Qqb-eYhPIutmZE8KGCvx_xotyts')
