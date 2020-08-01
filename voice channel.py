@@ -1,8 +1,7 @@
 @Bot.event
 async def on_voice_state_update(member,before,after):
     if after.channel.id == ВашАйди:
-        print("Канал создался")
-        mainCategory = discord.utils.get(after.guild.categories, id=ВашАйди)
+        mainCategory = discord.utils.get(after.channel.guild.categories, id=ВашАйди)
         channel2 = await after.guild.create_voice_channel(name=f"Комната {member.display_name}",category=mainCategory)
         await member.move_to(channel2)
         await channel2.set_permissions(member,mute_members=True,move_members=True,manage_channels=True)
